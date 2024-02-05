@@ -28,61 +28,32 @@
 # with open("file.txt", "a") as count_len_words_file:
 #     count_len_words_file.write(f"\nTotal words: {count}")
 
-
-# forbidden_word = input("Enter the word you want to ban: ")
-#
-# with open("text_file.txt", "w") as input_file:
-#     text = input("Enter any text: ")
-#     input_file.write(text)
-#
-# with open("text_file.txt", "r") as input_file:
-#     text = input_file.read()
-#     if forbidden_word in text:
-#         text_without_banword = text.replace(forbidden_word, "*" * len(forbidden_word))
-#
-#         with open("modified_text_file.txt", "w") as output_file:
-#             output_file.write(text_without_banword)
-#
-#
-#         print("Modified text:")
-#         print(text_without_banword)
-#         print("Statistics:")
-#         print(f"Replaced {text.count(forbidden_word)} occurrences of '{forbidden_word}' with '*'")
-#     else:
-#         print("The forbidden word was not found in the text.")
-
 ######################################
 
+forbidden_word = input("Enter the word you want to ban: ")
+
+with open("text_file.txt", "w") as input_file:
+    text = input("Enter any text: ")
+    input_file.write(text)
+
+with open("text_file.txt", "r") as input_file:
+    text = input_file.read()
+    if forbidden_word in text:
+        text_without_banword = text.replace(forbidden_word, "*" * len(forbidden_word))
+
+        with open("modified_text_file.txt", "w") as output_file:
+            output_file.write(text_without_banword)
 
 
-
-# forbidden_word = input("Enter the word you want to ban: ")
-#
-# with open("text_file.txt", "w") as input_file:
-#     text = input("Enter any text: ")
-#     input_file.write(text)
-#
-# with open("text_file.txt", "r") as input_file:
-#     text = input_file.read()
-#     if forbidden_word in text:
-#         text_without_banword = text.replace(forbidden_word, "*" * len(forbidden_word))
-#
-#         with open("modified_text_file.txt", "w") as output_file:
-#             output_file.write(text_without_banword)
-#
-#
-#         replacements_count = text.count(forbidden_word)
-#
-#
-#         with open("statistics.txt", "w") as stats_file:
-#             stats_file.write(f"Replaced {replacements_count} occurrences of '{forbidden_word}' with '*'\n")
-#
-#         print("Modified text:")
-#         print(text_without_banword)
-#         print("Statistics:")
-#         print(f"Replaced {replacements_count} occurrences of '{forbidden_word}' with '*'")
-#     else:
-#         print("The forbidden word was not found in the text.")
+        replacements_count = text.count(forbidden_word)
 
 
+        with open("statistics.txt", "w") as stats_file:
+            stats_file.write(f"Replaced {replacements_count} occurrences of '{forbidden_word}' with '*'\n")
 
+        print("Modified text:")
+        print(text_without_banword)
+        print("Statistics:")
+        print(f"Replaced {replacements_count} occurrences of '{forbidden_word}' with '*'")
+    else:
+        print("The forbidden word was not found in the text.")
